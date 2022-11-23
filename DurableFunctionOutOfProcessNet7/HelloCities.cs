@@ -1,4 +1,3 @@
-using System.Net;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.DurableTask;
@@ -37,7 +36,7 @@ namespace DurableFunctionOutOfProcessNet7
         }
 
         [Function(nameof(SayHelloActivity))]
-        public string SayHelloActivity([ActivityTrigger] string cityName, FunctionContext executionContext)
+        public string SayHelloActivity([ActivityTrigger] string cityName)
         {
             _logger.LogInformation("Saying hello to {name}", cityName);
             return $"Hello, {cityName}!";
