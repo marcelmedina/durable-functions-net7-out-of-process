@@ -29,7 +29,7 @@ namespace DurableFunctionOutOfProcessNet7
         public async Task<string> HelloCitiesOrchestrator([OrchestrationTrigger] TaskOrchestrationContext context)
         {
             string result = "";
-            result += await context.CallActivityAsync<string>(nameof(SayHelloActivity), "Tokyo") + " ";
+            result += await context.CallActivityAsync<string>(nameof(SayHelloActivity), "Auckland") + " ";
             result += await context.CallActivityAsync<string>(nameof(SayHelloActivity), "London") + " ";
             result += await context.CallActivityAsync<string>(nameof(SayHelloActivity), "Seattle");
             return result;
